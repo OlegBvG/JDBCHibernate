@@ -1,26 +1,33 @@
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
+@Embeddable
 @Table(name = "purchaselist")
 
 public class PurchaseList {
+    @Id
+    @ManyToOne
+    @JoinColumn(
+            name = "student_name",
+            insertable = false, updatable = false)
+    @NotNull
 
+    protected String studentName;
 
     @Column(name =  "course_name")
-    private String courseName;
+    protected String courseName;
 
     @Column(name =  "price")
-    private int price;
-
-@Id
-    @Column(name =  "student_name")
-    private String studentName;
-
+    protected int price;
 
     @Column(name =  "subscription_date")
     @Temporal(value= TemporalType.TIMESTAMP)
-    private Date subscriptionDate;
+    protected Date subscriptionDate;
+
+    public PurchaseList() {
+    }
 
 
     public String getStudentName() {

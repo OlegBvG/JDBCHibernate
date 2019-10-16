@@ -1,8 +1,10 @@
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name = "Courses")
+@Table(name = "courses")
 
 public class Course {
 
@@ -23,8 +25,23 @@ public class Course {
     private String description;
     private int duration;
 
-    public int getId() {
-        return id;
+    @OneToMany(mappedBy = "course")
+    protected Set<Subscriptions> subscriptions = new HashSet<>();
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="teacher_id",referencedColumnName="id", insertable=false, updatable=false)
+    private Teacher teacher;
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
+    public Long getId() {
+        return Long.valueOf(id);
     }
 
     public void setId(int id) {
@@ -93,5 +110,9 @@ public class Course {
 
     public void setDuration(int duration) {
         this.duration = duration;
+    }
+
+    public Set<Subscriptions> getSubscriptions() {
+        return subscriptions;
     }
 }

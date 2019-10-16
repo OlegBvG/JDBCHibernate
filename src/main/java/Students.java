@@ -1,5 +1,7 @@
+
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.*;
 
 @Entity
 @Table(name = "students")
@@ -15,12 +17,23 @@ public class Students {
         private int age;
 
         @Column(name =  "registration_date")
-        @Basic
         private java.sql.Timestamp registrationDate;
-//        private TIMESTAMP ;
 
-    public int getId() {
-        return id;
+        @OneToMany(mappedBy = "students")
+        protected Set<Subscriptions> subscriptions = new HashSet<>();
+
+    public Students() {
+    }
+
+//    @OneToMany
+//    @JoinColumn(name = "student_name", nullable = false)
+//        protected Set<PurchaseList> purchaseLists = new HashSet<>();
+
+
+
+
+    public Long getId() {
+        return Long.valueOf(id);
     }
 
     public void setId(int id) {
@@ -49,6 +62,10 @@ public class Students {
 
     public void setRegistrationDate(Timestamp registrationDate) {
         this.registrationDate = registrationDate;
+    }
+
+    public Set<Subscriptions> getSubscriptions() {
+        return subscriptions;
     }
 
     @Override
