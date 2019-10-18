@@ -28,6 +28,9 @@ public class Course {
     @OneToMany(mappedBy = "course")
     protected Set<Subscriptions> subscriptions = new HashSet<>();
 
+    @OneToMany(mappedBy = "course")
+    protected Set<PurchaseList> purchaseLists = new HashSet<>();
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="teacher_id",referencedColumnName="id", insertable=false, updatable=false)
     private Teacher teacher;
@@ -114,5 +117,9 @@ public class Course {
 
     public Set<Subscriptions> getSubscriptions() {
         return subscriptions;
+    }
+
+    public Set<PurchaseList> getPurchaseLists() {
+        return purchaseLists;
     }
 }

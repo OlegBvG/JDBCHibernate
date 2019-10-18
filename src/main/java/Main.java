@@ -46,6 +46,29 @@ public class Main {
             System.out.println(subscriptions.course.getName());
         }
 
+        System.out.println("\ntable: purchaselist - СТУДЕНТ => КУРСЫ ");
+        Students studentsPur = session.get(Students.class, 2);
+        Set<PurchaseList> purchaseListSet = studentsPur.getPurchaseLists();
+        System.out.println(studentsPur);
+        System.out.println(purchaseListSet.size());
+        for (PurchaseList purchaseList : purchaseListSet){
+            System.out.println(purchaseList.getCoursePur().getName());
+        }
+
+        System.out.println("\ntable: purchaselist - КУРС => СТУДЕНТЫ");
+        Course coursePur = session.get(Course.class, 2);
+        Set<PurchaseList> purchaseListSet1 = coursePur.getPurchaseLists();
+        System.out.println("КУРС: " + coursePur.getName());
+        System.out.println("КУРС: " );
+        for (PurchaseList purchaseList : purchaseListSet1){
+            System.out.println(purchaseList.getStudentsPur());
+        }
+//        PurchaseList.IdPur id = new PurchaseList.IdPur("Фуриков Эрнст", "Мобильный разработчик с нуля");
+//        PurchaseList purchaseList = session.get(PurchaseList.class, id);
+//        System.out.println(purchaseList);
+//        System.out.println("Курс: " + id.course_name + "; Студент: " + id.student_name);
+
+
     sessionFactory.close();
 
     }

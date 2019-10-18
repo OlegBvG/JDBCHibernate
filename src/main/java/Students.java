@@ -22,14 +22,18 @@ public class Students {
         @OneToMany(mappedBy = "students")
         protected Set<Subscriptions> subscriptions = new HashSet<>();
 
+        @OneToMany(mappedBy = "students")
+        protected Set<PurchaseList> purchaseLists = new HashSet<>();
+
+
+
+        @OneToMany
+    @JoinColumn(name = "student_name", nullable = false,
+            insertable = false, updatable = false)
+        protected Set<PurchaseList> purchaseList = new HashSet<>();
+
     public Students() {
     }
-
-//    @OneToMany
-//    @JoinColumn(name = "student_name", nullable = false)
-//        protected Set<PurchaseList> purchaseLists = new HashSet<>();
-
-
 
 
     public Long getId() {
@@ -66,6 +70,14 @@ public class Students {
 
     public Set<Subscriptions> getSubscriptions() {
         return subscriptions;
+    }
+
+    public Set<PurchaseList> getPurchaseLists() {
+        return purchaseLists;
+    }
+
+    public Set<PurchaseList> getPurchaseList() {
+        return purchaseList;
     }
 
     @Override

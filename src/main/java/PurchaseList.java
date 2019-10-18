@@ -1,49 +1,91 @@
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.io.Serializable;
+import java.sql.Timestamp;
 
-@Embeddable
+@Entity
 @Table(name = "purchaselist")
+@org.hibernate.annotations.Immutable
 
 public class PurchaseList {
-    @Id
+
+    @Embeddable
+    public static class IdPur implements Serializable {
+        protected String student_name;
+        protected String course_name;
+
+        protected IdPur() {
+        }
+
+        public IdPur(String student_name, String course_name) {
+            this.student_name = student_name;
+            this.course_name = course_name;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            IdPur idPur = (IdPur) o;
+            if (!course_name.equals(idPur.course_name)) return false;
+            if (!student_name.equals(idPur.student_name)) return false;
+            return true;
+        }
+        @Override
+        public int hashCode() {
+            int result = student_name.hashCode();
+            result = 31 * result + course_name.hashCode();
+            return result;
+        }
+    }
+
+
+    @EmbeddedId
+    protected IdPur idPur = new IdPur();
+
+    @Column(name = "subscription_date", updatable = false)
+    @NotNull
+    protected Timestamp subscriptionDate;
+
+    @Column(name = "price", updatable = false)
+    @NotNull
+    protected int price;
+
     @ManyToOne
+//    @JoinColumn(name="student_name", referencedColumnName="name", insertable=false, updatable=false)
     @JoinColumn(
             name = "student_name",
             insertable = false, updatable = false)
     @NotNull
+    protected Students students;
 
-    protected String studentName;
 
-    @Column(name =  "course_name")
-    protected String courseName;
-
-    @Column(name =  "price")
-    protected int price;
-
-    @Column(name =  "subscription_date")
-    @Temporal(value= TemporalType.TIMESTAMP)
-    protected Date subscriptionDate;
+    @ManyToOne
+//    @JoinColumn(name="course_name", referencedColumnName="name", insertable=false, updatable=false)
+    @JoinColumn(
+            name = "course_name",
+            insertable = false, updatable = false)
+    @NotNull
+    protected Course course;
 
     public PurchaseList() {
     }
 
-
-    public String getStudentName() {
-        return studentName;
+    public IdPur getIdPur() {
+        return idPur;
     }
 
-    public void setStudentName(String studentName) {
-        this.studentName = studentName;
+    public void setIdPur(IdPur idPur) {
+        this.idPur = idPur;
     }
 
-    public String getCourseName() {
-        return courseName;
+    public Timestamp getSubscriptionDate() {
+        return subscriptionDate;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
+    public void setSubscriptionDate(Timestamp subscriptionDate) {
+        this.subscriptionDate = subscriptionDate;
     }
 
     public int getPrice() {
@@ -54,11 +96,23 @@ public class PurchaseList {
         this.price = price;
     }
 
-    public Date getSubscriptionDate() {
-        return subscriptionDate;
+    public Students getStudentsPur() {
+        return students;
     }
 
-    public void setSubscriptionDate(Date subscriptionDate) {
-        this.subscriptionDate = subscriptionDate;
+    public void setStudentsPur(Students studentsPur) {
+        this.students = studentsPur;
+    }
+
+    public Course getCoursePur() {
+        return course;
+    }
+
+    public void setCoursePur(Course coursePur) {
+        this.course = coursePur;
     }
 }
+
+
+
+
