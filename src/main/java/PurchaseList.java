@@ -53,7 +53,7 @@ public class PurchaseList {
     protected int price;
 
     @ManyToOne
-//    @JoinColumn(name="student_name", referencedColumnName="name", insertable=false, updatable=false)
+//    @JoinColumn(name="student_name", referencedColumnName="name", insertable=false, updatable=false) //
     @JoinColumn(
             name = "student_name",
             insertable = false, updatable = false)
