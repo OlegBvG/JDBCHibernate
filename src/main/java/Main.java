@@ -63,10 +63,12 @@ public class Main {
         for (PurchaseList purchaseList : purchaseListSet1){
             System.out.println(purchaseList.getStudentsPur());
         }
-//        PurchaseList.IdPur id = new PurchaseList.IdPur("Фуриков Эрнст", "Мобильный разработчик с нуля");
-//        PurchaseList purchaseList = session.get(PurchaseList.class, id);
-//        System.out.println(purchaseList);
-//        System.out.println("Курс: " + id.course_name + "; Студент: " + id.student_name);
+
+        System.out.println(" \nПолучим purchaseList по Id ");
+        PurchaseList.IdPur id = new PurchaseList.IdPur("Фуриков Эрнст", "Мобильный разработчик с нуля");
+        PurchaseList purchaseList = session.get(PurchaseList.class, id);
+        System.out.println("Курс: " + purchaseList.getCoursePur().getName() + "; Студент: " + purchaseList.getStudentsPur());
+        System.out.println("Курс: " + id.course_name + "; Студент: " + id.student_name);
 
 
     sessionFactory.close();

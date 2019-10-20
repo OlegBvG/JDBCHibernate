@@ -1,12 +1,13 @@
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "courses")
 
-public class Course {
+public class Course implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,7 +32,7 @@ public class Course {
     @OneToMany(mappedBy = "course")
     protected Set<PurchaseList> purchaseLists = new HashSet<>();
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name="teacher_id",referencedColumnName="id", insertable=false, updatable=false)
     private Teacher teacher;
 
@@ -122,4 +123,14 @@ public class Course {
     public Set<PurchaseList> getPurchaseLists() {
         return purchaseLists;
     }
+
+    public void setSubscriptions(Set<Subscriptions> subscriptions) {
+        this.subscriptions = subscriptions;
+    }
+
+    public void setPurchaseLists(Set<PurchaseList> purchaseLists) {
+        this.purchaseLists = purchaseLists;
+    }
+
+
 }

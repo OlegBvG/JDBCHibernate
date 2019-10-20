@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="850c3ede-f8cb-405a-84a7-9b64ad6bd0ac" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/PurchaseList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PurchaseList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Students.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Students.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Subscriptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Subscriptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Course.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Course.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/PurchaseList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PurchaseList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Students.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Students.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +41,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JDBCHibernate-master" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -108,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571442494000</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Mapping tables Course and Students and other classes, composite index purchaseList">
+      <created>1571442665766</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1571442665766</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,7 +143,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Mapping tables Course and Students" />
     <MESSAGE value="Mapping tables Course and Students and other classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mapping tables Course and Students and other classes" />
+    <MESSAGE value="Mapping tables Course and Students and other classes, composite index purchaseList" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mapping tables Course and Students and other classes, composite index purchaseList" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

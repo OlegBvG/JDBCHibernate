@@ -10,6 +10,45 @@ import java.sql.Timestamp;
 
 public class PurchaseList {
 
+    @EmbeddedId
+    protected IdPur idPur = new IdPur();
+
+    @Column(name = "subscription_date", updatable = false)
+    @NotNull
+    protected Timestamp subscriptionDate;
+
+    @Column(name = "price", updatable = false)
+    @NotNull
+    protected int price;
+
+    public PurchaseList() {
+    }
+
+    public IdPur getIdPur() {
+        return idPur;
+    }
+
+    public void setIdPur(IdPur idPur) {
+        this.idPur = idPur;
+    }
+
+    public Timestamp getSubscriptionDate() {
+        return subscriptionDate;
+    }
+
+    public void setSubscriptionDate(Timestamp subscriptionDate) {
+        this.subscriptionDate = subscriptionDate;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+
     @Embeddable
     public static class IdPur implements Serializable {
         protected String student_name;
@@ -40,61 +79,18 @@ public class PurchaseList {
         }
     }
 
-
-    @EmbeddedId
-    protected IdPur idPur = new IdPur();
-
-    @Column(name = "subscription_date", updatable = false)
-    @NotNull
-    protected Timestamp subscriptionDate;
-
-    @Column(name = "price", updatable = false)
-    @NotNull
-    protected int price;
-
-    @ManyToOne
-//    @JoinColumn(name="student_name", referencedColumnName="name", insertable=false, updatable=false) //
-    @JoinColumn(
-            name = "student_name",
-            insertable = false, updatable = false)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "student_name", referencedColumnName = "name", insertable=false, updatable=false)
     @NotNull
     protected Students students;
 
 
-    @ManyToOne
-//    @JoinColumn(name="course_name", referencedColumnName="name", insertable=false, updatable=false)
-    @JoinColumn(
-            name = "course_name",
-            insertable = false, updatable = false)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "course_name", referencedColumnName = "name", insertable=false, updatable=false)
     @NotNull
     protected Course course;
 
-    public PurchaseList() {
-    }
 
-    public IdPur getIdPur() {
-        return idPur;
-    }
-
-    public void setIdPur(IdPur idPur) {
-        this.idPur = idPur;
-    }
-
-    public Timestamp getSubscriptionDate() {
-        return subscriptionDate;
-    }
-
-    public void setSubscriptionDate(Timestamp subscriptionDate) {
-        this.subscriptionDate = subscriptionDate;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
 
     public Students getStudentsPur() {
         return students;
@@ -110,6 +106,22 @@ public class PurchaseList {
 
     public void setCoursePur(Course coursePur) {
         this.course = coursePur;
+    }
+
+    public Students getStudents() {
+        return students;
+    }
+
+    public void setStudents(Students students) {
+        this.students = students;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
     }
 }
 

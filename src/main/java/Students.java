@@ -1,12 +1,13 @@
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.*;
 
 @Entity
 @Table(name = "students")
 
-public class Students {
+public class Students implements Serializable {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,8 +28,8 @@ public class Students {
 
 
 
-        @OneToMany
-    @JoinColumn(name = "student_name", nullable = false,
+        @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "student_name", referencedColumnName = "name", nullable = false,
             insertable = false, updatable = false)
         protected Set<PurchaseList> purchaseList = new HashSet<>();
 
@@ -74,6 +75,18 @@ public class Students {
 
     public Set<PurchaseList> getPurchaseLists() {
         return purchaseLists;
+    }
+
+    public void setSubscriptions(Set<Subscriptions> subscriptions) {
+        this.subscriptions = subscriptions;
+    }
+
+    public void setPurchaseLists(Set<PurchaseList> purchaseLists) {
+        this.purchaseLists = purchaseLists;
+    }
+
+    public void setPurchaseList(Set<PurchaseList> purchaseList) {
+        this.purchaseList = purchaseList;
     }
 
     public Set<PurchaseList> getPurchaseList() {

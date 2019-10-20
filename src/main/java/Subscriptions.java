@@ -17,6 +17,22 @@ public class Subscriptions {
         @Column(name = "course_id")
         protected Integer courseId;
 
+        public Integer getStudentId() {
+            return studentId;
+        }
+
+        public void setStudentId(Integer studentId) {
+            this.studentId = studentId;
+        }
+
+        public Integer getCourseId() {
+            return courseId;
+        }
+
+        public void setCourseId(Integer courseId) {
+            this.courseId = courseId;
+        }
+
         public Id() {
         }
 
@@ -91,6 +107,8 @@ public class Subscriptions {
     public void setCourse(Course course) {
         this.course = course;
     }
+
+
 }
 
 
