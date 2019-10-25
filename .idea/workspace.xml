@@ -2,22 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="850c3ede-f8cb-405a-84a7-9b64ad6bd0ac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/SubscriptionsExt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/jpwh/model/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PurchaseList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PurchaseList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Students.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Students.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Subscriptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Subscriptions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Course.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Course.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PurchaseList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PurchaseList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Students.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Students.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="JDBCHibernate" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -41,8 +44,8 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JDBCHibernate-master" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AccountsNew" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -66,6 +69,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="12" />
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="JDBCHibernate" />
       <method v="2">
@@ -124,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571442665766</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Mapping tables Course and Students and other classes, composite index purchaseList in String">
+      <created>1571609209877</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1571609209878</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,17 +155,7 @@
     <MESSAGE value="Mapping tables Course and Students" />
     <MESSAGE value="Mapping tables Course and Students and other classes" />
     <MESSAGE value="Mapping tables Course and Students and other classes, composite index purchaseList" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mapping tables Course and Students and other classes, composite index purchaseList" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Mapping tables Course and Students and other classes, composite index purchaseList in String" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mapping tables Course and Students and other classes, composite index purchaseList in String" />
   </component>
 </project>
