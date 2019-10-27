@@ -84,19 +84,19 @@ public class Main {
 
         List<Object[]> result =  query.list();
         System.out.println("\n Количество записей в purchaselist: " + result.size());
-        Integer idd = 1;
+//        Integer idd = 1;
 
         Transaction transaction = session.beginTransaction();
 
         for (Object[] tuple : result) {
             System.out.println(tuple[0] + " - " + tuple[1] + " - " + tuple[2] + " - " + tuple[3] + " - " + tuple[4]);
 
-            session.saveOrUpdate("subscriptionsext", new SubscriptionsExt( (Integer) tuple[0] , (String) tuple[1] , (Integer) tuple[2] , (String) tuple[3], (Timestamp) tuple[4], idd++));
-//            session.saveOrUpdate("subscriptionsext", new SubscriptionsExt( (Integer) tuple[0] , (String) tuple[1] , (Integer) tuple[2] , (String) tuple[3], (Timestamp) tuple[4]));
+//            session.saveOrUpdate("subscriptionsext", new SubscriptionsExt( (Integer) tuple[0] , (String) tuple[1] , (Integer) tuple[2] , (String) tuple[3], (Timestamp) tuple[4], idd++));
+            session.saveOrUpdate("subscriptionsext", new SubscriptionsExt( (Integer) tuple[0] , (String) tuple[1] , (Integer) tuple[2] , (String) tuple[3], (Timestamp) tuple[4]));
         }
         transaction.commit();
 
-    sessionFactory.close();
+         sessionFactory.close();
 
     }
 }

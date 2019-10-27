@@ -20,9 +20,15 @@ public class Course implements Serializable {
     private int studentsCount;
     @Column(name =  "teacher_id")
     private int teacherId;
+
+//    @Enumerated(EnumType.STRING)
+//    @Column(columnDefinition = "enum")
+//    private CourseType type;
+
     @Enumerated(EnumType.STRING)
-    @Column(columnDefinition = "enum")
+    @Column(columnDefinition = "ENUM('DESIGN', 'PROGRAMMING', 'MARKETING', 'MANAGEMENT', 'BUSINESS')")
     private CourseType type;
+
     private String description;
     private int duration;
 

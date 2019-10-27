@@ -28,10 +28,10 @@ public class Students implements Serializable {
 
 
 
-        @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "student_name", referencedColumnName = "name", nullable = false,
-            insertable = false, updatable = false)
-        protected Set<PurchaseList> purchaseList = new HashSet<>();
+//        @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//        @JoinColumn(name = "student_name", referencedColumnName = "name", nullable = false,
+//            insertable = false, updatable = false)
+//        protected Set<PurchaseList> purchaseList = new HashSet<>();
 
     public Students() {
     }
@@ -85,13 +85,13 @@ public class Students implements Serializable {
         this.purchaseLists = purchaseLists;
     }
 
-    public void setPurchaseList(Set<PurchaseList> purchaseList) {
-        this.purchaseList = purchaseList;
-    }
-
-    public Set<PurchaseList> getPurchaseList() {
-        return purchaseList;
-    }
+//    public void setPurchaseList(Set<PurchaseList> purchaseList) {
+//        this.purchaseList = purchaseList;
+//    }
+//
+//    public Set<PurchaseList> getPurchaseList() {
+//        return purchaseList;
+//    }
 
     @Override
     public String toString() {

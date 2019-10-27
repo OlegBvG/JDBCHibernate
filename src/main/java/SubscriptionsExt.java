@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 public class SubscriptionsExt implements Serializable {
 
         @Id
-//        @GeneratedValue(generator = "ID_GENERATOR")
+        @GeneratedValue(generator = "ID_GENERATOR")
 
         public Integer id;
         public Integer studentId;
